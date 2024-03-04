@@ -21,24 +21,23 @@ export function Todos({ todos: initialTodos }: Props) {
       <div className="flex flex-col gap-2">
         {todos.length ? (
           todos.map(todo => (
-            <TodoItem
-              key={todo.id}
-              todo={todo}
-              onDeleteSuccess={id => {
-                setTodos(currentTodos =>
-                  currentTodos.filter(todo => todo.id !== id),
-                )
-              }}
-            />
+            <div className="border-b border-b-slate-300 py-2" key={todo.id}>
+              <TodoItem
+                todo={todo}
+                onDeleteSuccess={id => {
+                  setTodos(currentTodos =>
+                    currentTodos.filter(todo => todo.id !== id),
+                  )
+                }}
+              />
+            </div>
           ))
         ) : (
           <div>No todos yet!</div>
         )}
       </div>
 
-      <div className="max-w-[400px]">
-        <AddTodo onSuccess={handleAddTodoSuccess} />
-      </div>
+      <AddTodo onSuccess={handleAddTodoSuccess} />
     </div>
   )
 }

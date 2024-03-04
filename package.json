@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "next dev",
+    "lint": "next lint",
+    "migrate": "npm run migration:generate && npm run migration:push",
+    "migration:generate": "drizzle-kit generate:pg --schema=./src/db/schema.ts",
+    "migration:push": "tsx ./src/db/migrate.ts",
+    "start": "next start"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
@@ -28,6 +31,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.3.0",
+    "tsx": "^4.7.1",
     "typescript": "^5"
   }
 }
