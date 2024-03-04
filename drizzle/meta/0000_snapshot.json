@@ -1,5 +1,5 @@
 {
-  "id": "14554b0a-56f1-4eeb-8737-828d36d58ef4",
+  "id": "2d60bffc-14c0-4c19-92c3-49ab2c97fb51",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -26,6 +26,13 @@
           "primaryKey": false,
           "notNull": true,
           "default": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp (6) with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
         }
       },
       "indexes": {},

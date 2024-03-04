@@ -1,1 +1,0 @@
-ALTER TABLE "todo" ADD COLUMN "createdAt" timestamp (6) with time zone DEFAULT now() NOT NULL;
